@@ -48,7 +48,7 @@ public class ModelParser {
                 }
             }
             if (notFound) {
-                throw new IllegalArgumentException("Field is not supported by any parser factory: " + field);
+                throw new IllegalArgumentException("Field is not supported by any field parser: " + field);
             }
         }
         return fieldToParserMap;

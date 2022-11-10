@@ -47,9 +47,6 @@ public class ExcelColumnTitleFieldParser implements FieldParser {
 
         options.titleRowRange().forEach(rowIndex -> {
             var columnRange = options.getRealColumnRange(rowIndex);
-            if (columnRange == null) {
-                return;
-            }
 
             columnRange.forEach(columnIndex -> {
                 var value = options.cellParser().parse(null, rowIndex, columnIndex, options);
@@ -62,4 +59,5 @@ public class ExcelColumnTitleFieldParser implements FieldParser {
 
         return columnTitleToIndexMap;
     }
+
 }

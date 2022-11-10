@@ -63,11 +63,6 @@ public class ParseOptionsBuilder {
         return this;
     }
 
-    public ParseOptionsBuilder column(int columnIndex) {
-        columnRange = new IndexRange(columnIndex, columnIndex);
-        return this;
-    }
-
     public ParseOptionsBuilder columns(int startColumnIndex, int endColumnIndex) {
         columnRange = new IndexRange(startColumnIndex, endColumnIndex);
         return this;
