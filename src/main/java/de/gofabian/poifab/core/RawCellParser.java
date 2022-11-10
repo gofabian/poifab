@@ -28,7 +28,7 @@ public class RawCellParser implements CellParser {
             cellType = cell.getCachedFormulaResultType();
         }
 
-        switch (cell.getCellType()) {
+        switch (cellType) {
             case BLANK -> {
                 return null;
             }
