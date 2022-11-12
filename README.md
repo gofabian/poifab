@@ -5,6 +5,16 @@
 
 Java library that reads an Excel file into objects. With focus on extensibility.
 
+## Add Poifab to your project
+
+```xml
+<dependency>
+    <groupId>de.gofabian</groupId>
+    <artifactId>poifab</artifactId>
+    <version>0.0.0</version>
+</dependency>
+```
+
 ## ModelParser
 
 Use the `ModelParser` to parse parts of an Excel file `sample.xlsx` into a list of `Model` instances: 
@@ -123,3 +133,42 @@ new ParseOptionsBuilder()
 ## License
 
 [MIT License](LICENSE.txt)
+
+## Development
+
+Run tests:
+
+    mvn test
+
+## Release
+
+Set new version (implicit `git tag` and `git push`):
+
+    ./bump_version.sh x.y.z
+
+Create a release in Github and the Github workflow will automatically publish it to Maven Central.
+
+Manual alternative:
+
+    mvn clean deploy -P release
+
+## One-time release preparation
+
+Generate key for code signature:
+
+    gpg --gen-key
+    gpg --keyserver keyserver.ubuntu.com --send-keys xxx
+
+~/.m2/settings.xml
+
+```xml
+<settings>
+  <servers>
+        <server>
+          <id>ossrh</id>
+          <username>xxx</username>
+          <password>xxx</password>
+        </server>
+  </servers>
+</settings>
+```
