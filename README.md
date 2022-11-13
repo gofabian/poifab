@@ -120,7 +120,21 @@ new ParseOptionsBuilder()
     ...
 ```
 
-### Extend Poifab
+## Extensions
+
+One of the main attributes of Poifab is its extensibility.
+
+    TableParser -> FieldParser -> CellParser
+
+- A `TableParser` iterates rows and uses `FieldParser`s to extract values for each row.
+`DefaultTableParser` is the only built-in table parser.
+- A `FieldParser` provides values for supported fields (of a Java data class).
+It uses a `CellParser` to extract values from single cells.
+Built-in field parsers support the annotations `@ExcelColumnIndex` and `@ExcelColumnTitle`.
+- A `CellParser` reads the value of an Excel cell.
+
+If you want to implement your own extension, have a look at existing implementations of 
+`CellParser`/`FieldParser`/`TableParser` and add your extension to the parse options:
 
 ```java
 new ParseOptionsBuilder()
