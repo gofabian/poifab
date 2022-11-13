@@ -11,7 +11,7 @@ Java library that reads an Excel file into objects. With focus on extensibility.
 <dependency>
     <groupId>de.gofabian</groupId>
     <artifactId>poifab</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
 </dependency>
 ```
 
